@@ -17,3 +17,7 @@ def test_contains_point():
 def test_render():
     canvas = Canvas(3, 3)
     assert canvas.render() == "+-+-+-+\n| | | |\n+-+-+-+\n| | | |\n+-+-+-+\n| | | |\n+-+-+-+\n"
+
+
+def test_draw():
+    pass
