@@ -9,3 +9,14 @@ class Line():
 
     def is_valid(self):
         return self.x1 == self.x2 or self.y1 == self.y2
+
+    def draw(self, canvas):
+        if self.x1 <= 0 or self.x1 > canvas.width:
+            return canvas
+        elif self.x2 <= 0 or self.x2 > canvas.width:
+            return canvas
+        elif self.y1 <= 0 or self.y1 > canvas.height:
+            return canvas
+        elif self.y2 <= 0 or self.y2 > canvas.height:
+            return canvas
+        return canvas

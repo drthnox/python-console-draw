@@ -2,9 +2,9 @@ from ConsoleDraw.Canvas import Canvas
 
 
 def test_create():
-    canvas = Canvas(rows=10, columns=20)
-    assert canvas.rows == 10
-    assert canvas.columns == 20
+    canvas = Canvas(height=10, width=20)
+    assert canvas.height == 10
+    assert canvas.width == 20
 
 
 def test_contains_point():
