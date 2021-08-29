@@ -1,4 +1,7 @@
-class Line():
+from ConsoleDraw.Command import Command
+
+
+class Line(Command):
 
     def __init__(self, x1, y1, x2, y2):
         self.x1 = x1
@@ -19,4 +22,5 @@ class Line():
             return canvas
         elif self.y2 <= 0 or self.y2 > canvas.height:
             return canvas
+        # TODO: draw the line on the canvas
         return canvas

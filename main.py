@@ -1,4 +1,4 @@
-from ConsoleDraw import Canvas
+from ConsoleDraw.Canvas import Canvas
 import shlex
 
 

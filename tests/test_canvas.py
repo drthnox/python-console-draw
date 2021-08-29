@@ -16,8 +16,14 @@ def test_contains_point():
 
 def test_render():
     canvas = Canvas(3, 3)
-    assert canvas.render() == "+-+-+-+\n| | | |\n+-+-+-+\n| | | |\n+-+-+-+\n| | | |\n+-+-+-+\n"
-
-
-def test_draw():
-    pass
+    s = canvas.render()
+    print("\nchecking[" + str(s) +"]\n\n\n")
+    expected = "+-+-+-+\n" \
+               "| | | |\n" \
+               "+-+-+-+\n" \
+               "| | | |\n" \
+               "+-+-+-+\n" \
+               "| | | |\n" \
+               "+-+-+-+"
+    print("expected["+str(expected)+"]")
+    assert str(s).strip() == str(expected).strip()

@@ -8,15 +8,26 @@
     "pythonTestExplorer.testFramework": "pytest",
     "pythonTestExplorer.testplanEnabled": true,
     "python.pythonPath": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
-    "editor.cursorBlinking": "phase",
+    "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": true,
     "editor.cursorStyle": "block",
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modificationsIfAvailable",
     "diffEditor.codeLens": true,
     "editor.minimap.enabled": false,
     "editor.inlineSuggest.enabled": true,
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.automationShell.osx": "true",
-    "telemetry.enableCrashReporter": false
+    "telemetry.enableCrashReporter": false,
+    "files.autoSave": "afterDelay",
+    "editor.renderWhitespace": "all",
+    "editor.defaultFormatter": "igress.python-coding-conventions",
+    "editor.mouseWheelZoom": true,
+    "editor.tabCompletion": "on",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "workbench.startupEditor": "none",
+    "workbench.fontAliasing": "auto",
+    "emmet.variables": {
+    
+    }
 }

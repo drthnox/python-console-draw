@@ -14,6 +14,16 @@ def test_create():
 
 
 def test_draw():
-    canvas = Canvas(10, 10)
-    line = Line(1, 1, 9, 1)
+    canvas = Canvas(4, 5)
+    line = Line(1, 1, 3, 1)
+    expected = str("""
+    +-+-+-+
+    | | | |
+    +-+-+-+
+    | | | |
+    +-+-+-+
+    | | | |
+    +-+-+-+
+    """)
+
     canvas = line.draw(canvas)

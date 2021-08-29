@@ -1,8 +1,10 @@
 class Canvas():
+    global pixels
 
     def __init__(self, height=1, width=1):
-        self.height = height
-        self.width = width
+        self.height, self.width = (height, width)
+        self.pixels = [[0]*width]*height
+        print(self.pixels)
 
     def contains_point(self, row, col):
         incols = True if (col >= 0 and col < self.width) else False
@@ -18,8 +20,10 @@ class Canvas():
             s += "+\n"
             for col in range(0, self.width):
                 s += "| "
+                # TODO draw pixel logic here
             s += "|\n"
         for col in range(0, self.width):
             s += "+-"
-        s += "+\n"
-        return s
+        s += "+"
+        print("\n\nreturning[" + str(s) +"]\n\n\n")
+        return str(s).strip()
