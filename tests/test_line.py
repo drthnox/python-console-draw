@@ -14,16 +14,13 @@ def test_create():
 
 
 def test_draw():
-    canvas = Canvas(4, 5)
+    canvas = Canvas(height=4, width=5)
     line = Line(1, 1, 3, 1)
-    expected = str("""
-    +-+-+-+
-    | | | |
-    +-+-+-+
-    | | | |
-    +-+-+-+
-    | | | |
-    +-+-+-+
-    """)
-
-    canvas = line.draw(canvas)
+    expected = "+-+-+-+\n" \
+               "| | | |\n" \
+               "+-+-+-+\n" \
+               "| | | |\n" \
+               "+-+-+-+\n" \
+               "| | | |\n" \
+               "+-+-+-+"
+    canvas = canvas.draw(line)

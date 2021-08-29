@@ -1,10 +1,14 @@
+from ConsoleDraw.AbstractDrawable import AbstractDrawable
+
+
 class Canvas():
     global pixels
+    global drawables
 
     def __init__(self, height=1, width=1):
         self.height, self.width = (height, width)
         self.pixels = [[0]*width]*height
-        print(self.pixels)
+        # self.drawables = list(AbstractDrawable)
 
     def contains_point(self, row, col):
         incols = True if (col >= 0 and col < self.width) else False
@@ -27,3 +31,6 @@ class Canvas():
         s += "+"
         print("\n\nreturning[" + str(s) +"]\n\n\n")
         return str(s).strip()
+
+    def draw(self, drawable):
+        pass
