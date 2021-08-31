@@ -17,11 +17,16 @@ def test_create():
 def test_draw():
     canvas = Canvas(height=4, width=5)
     line = Line(canvas, 1, 1, 3, 1)
-    expected = "+-+-+-+\n" \
-               "| | | |\n" \
-               "+-+-+-+\n" \
-               "| | | |\n" \
-               "+-+-+-+\n" \
-               "| | | |\n" \
-               "+-+-+-+"
-    canvas = canvas.draw(line)
+    expected = "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "| | | | | |\n" \
+               "+-+-+-+-+-+"
+    canvas.add(line)
+    s = canvas.render()
+    print("OUTPUT:\n\n" + s)
+    assert str(s).strip() == str(expected).strip()

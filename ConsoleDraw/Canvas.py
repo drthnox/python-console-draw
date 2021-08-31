@@ -1,13 +1,14 @@
 from ConsoleDraw.AbstractDrawable import AbstractDrawable
-
+import numpy as np
 
 class Canvas():
-    global pixels
-    global drawables
+    pixels = []
+    drawables = list()
 
     def __init__(self, height=1, width=1):
         self.height, self.width = (height, width)
-        self.pixels = [[0]*width]*height
+        # self.pixels = [[0]*self.width]*self.height
+        self.pixels = np.zeros([height,width], int)
         # self.drawables = list(AbstractDrawable)
 
     def contains_point(self, row, col):
@@ -17,20 +18,24 @@ class Canvas():
         return result
 
     def render(self):
+        for drawable in self.drawables:
+            drawable.draw()
         s = ""
         for row in range(0, self.height):
             for col in range(0, self.width):
                 s += "+-"
             s += "+\n"
             for col in range(0, self.width):
-                s += "| "
-                # TODO draw pixel logic here
+                s += "|"
+                if self.pixels[row,col] == 0:
+                    s += ' '
+                else:
+                    s += 'x'
             s += "|\n"
         for col in range(0, self.width):
             s += "+-"
         s += "+"
-        print("\n\nreturning[" + str(s) +"]\n\n\n")
         return str(s).strip()
 
-    def draw(self, drawable):
-        pass
+    def add(self, drawable):
+        self.drawables.append(drawable)
