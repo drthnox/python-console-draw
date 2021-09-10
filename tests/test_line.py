@@ -28,5 +28,17 @@ def test_draw():
                "+-+-+-+-+-+"
     canvas.add(line)
     s = canvas.render()
-    print("OUTPUT:\n\n" + s)
+    assert str(s).strip() == str(expected).strip()
+    line = Line(canvas, 1, 1, 1, 3)
+    canvas.add(line)
+    expected = "+-+-+-+-+-+\n" \
+               "|x|x|x| | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "| | | | | |\n" \
+               "+-+-+-+-+-+"
+    s = canvas.render()
     assert str(s).strip() == str(expected).strip()
