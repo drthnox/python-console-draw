@@ -1,6 +1,9 @@
-# from ConsoleDraw import CommandFactory
+from ConsoleDraw import Commands
 
 def test_create_unknowncommand():
-  # factory = CommandFactory.CommandFactory()
-  # cmd = factory.createCommand('u')
-  pass
+  cmd = Commands.CommandFactory._get_command(instruction="u")
+  assert isinstance(cmd, Commands.UnknownCommand)
+
+def test_create_drawlinecommand():
+  cmd = Commands.CommandFactory._get_command(instruction="l")
+  assert isinstance(cmd, Commands.DrawLineCommand)
