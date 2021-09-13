@@ -1,10 +1,10 @@
-from ConsoleDraw.Canvas import Canvas
 from ConsoleDraw import Drawable
+from ConsoleDraw.Canvas import Canvas
 
 
 def test_create():
     canvas = Canvas(height=10,width=10)
-    line = Drawable.Line(canvas=canvas, row1=1, col1=1, row2=10, col2=1)
+    line = Drawable.Line(canvas, 1,1,10,1)
     assert line.is_valid() == True
 
     line = Drawable.Line(canvas,1, 1, 1, 10)
