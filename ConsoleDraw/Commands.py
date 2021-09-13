@@ -3,6 +3,7 @@ from abc import ABCMeta, abstractmethod
 import logging
 
 from ConsoleDraw import Canvas
+from ConsoleDraw import Drawable
 
 logging.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
 
@@ -20,15 +21,16 @@ class UnknownCommand(Command):
 class DrawLineCommand(Command):
 
   def __init__(self, *params):
-    if len(params[0] != 4):
+    if len(params) != 4:
       raise ValueError("Invalid number of arguments")
-    self.x1=params[0][0]
-    self.y1=params[0][1]
-    self.x2=params[0][2]
-    self.y2=params[0][3]
+    self.x1=params[0]
+    self.y1=params[1]
+    self.x2=params[2]
+    self.y2=params[3]
 
   def _execute(self, canvas):
-     return super._execute(canvas)
+    canvas.add(Drawable.Line(canvas,self.x1,self.y1,self.x2,self.y2))
+    return canvas
 
 class QuitCommand(Command):
   pass

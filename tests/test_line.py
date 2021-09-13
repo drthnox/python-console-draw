@@ -1,5 +1,6 @@
 from ConsoleDraw import Drawable
 from ConsoleDraw.Canvas import Canvas
+from ConsoleDraw import Commands
 
 
 def test_create():
@@ -31,6 +32,35 @@ def test_draw():
     assert str(s).strip() == str(expected).strip()
     line = Drawable.Line(canvas, 1, 1, 1, 3)
     canvas.add(line)
+    expected = "+-+-+-+-+-+\n" \
+               "|x|x|x| | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "| | | | | |\n" \
+               "+-+-+-+-+-+"
+    s = canvas.render()
+    assert str(s).strip() == str(expected).strip()
+
+def test_draw_line_command():
+    canvas = Canvas(height=4, width=5)
+    lineCommand = Commands.DrawLineCommand(1, 1, 3, 1)
+    lineCommand._execute(canvas)
+    expected = "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "|x| | | | |\n" \
+               "+-+-+-+-+-+\n" \
+               "| | | | | |\n" \
+               "+-+-+-+-+-+"
+    s = canvas.render()
+    assert str(s).strip() == str(expected).strip()
+    lineCommand = Commands.DrawLineCommand(1, 1, 1, 3)
+    lineCommand._execute(canvas)
     expected = "+-+-+-+-+-+\n" \
                "|x|x|x| | |\n" \
                "+-+-+-+-+-+\n" \
