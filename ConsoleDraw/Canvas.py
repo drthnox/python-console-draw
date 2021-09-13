@@ -1,4 +1,3 @@
-from ConsoleDraw.AbstractDrawable import AbstractDrawable
 import numpy as np
 
 class Canvas():

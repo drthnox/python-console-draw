@@ -28,6 +28,7 @@
     "workbench.startupEditor": "none",
     "workbench.fontAliasing": "auto",
     "emmet.variables": {
-    
-    }
+
+    },
+    "editor.tabSize": 2
 }

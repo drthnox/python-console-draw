@@ -1,22 +1,22 @@
 from ConsoleDraw.Canvas import Canvas
-from ConsoleDraw.Line import Line
+from ConsoleDraw import Drawable
 
 
 def test_create():
     canvas = Canvas(height=10,width=10)
-    line = Line(canvas=canvas, row1=1, col1=1, row2=10, col2=1)
+    line = Drawable.Line(canvas=canvas, row1=1, col1=1, row2=10, col2=1)
     assert line.is_valid() == True
 
-    line = Line(canvas,1, 1, 1, 10)
+    line = Drawable.Line(canvas,1, 1, 1, 10)
     assert line.is_valid() == True
 
-    line = Line(canvas,1, 1, 2, 2)
+    line = Drawable.Line(canvas,1, 1, 2, 2)
     assert line.is_valid() == False
 
 
 def test_draw():
     canvas = Canvas(height=4, width=5)
-    line = Line(canvas, 1, 1, 3, 1)
+    line = Drawable.Line(canvas, 1, 1, 3, 1)
     expected = "+-+-+-+-+-+\n" \
                "|x| | | | |\n" \
                "+-+-+-+-+-+\n" \
@@ -29,7 +29,7 @@ def test_draw():
     canvas.add(line)
     s = canvas.render()
     assert str(s).strip() == str(expected).strip()
-    line = Line(canvas, 1, 1, 1, 3)
+    line = Drawable.Line(canvas, 1, 1, 1, 3)
     canvas.add(line)
     expected = "+-+-+-+-+-+\n" \
                "|x|x|x| | |\n" \
