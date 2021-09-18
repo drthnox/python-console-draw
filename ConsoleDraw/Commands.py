@@ -1,3 +1,4 @@
+from os import linesep
 import shlex
 from abc import ABCMeta, abstractmethod
 import logging
@@ -29,7 +30,9 @@ class DrawLineCommand(Command):
     self.y2=params[3]
 
   def _execute(self, canvas):
-    canvas.add(Drawable.Line(canvas,self.x1,self.y1,self.x2,self.y2))
+    line = Drawable.Line(self.x1,self.y1,self.x2,self.y2)
+    canvas.add(line)
+    print(str(canvas))
     return canvas
 
 class QuitCommand(Command):

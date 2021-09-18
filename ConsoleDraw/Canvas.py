@@ -1,10 +1,11 @@
 import numpy as np
 
 class Canvas():
-    pixels = []
-    drawables = list()
+    # pixels = []
+    # drawables = list()
 
     def __init__(self, height=1, width=1):
+        self.drawables = list()
         self.height, self.width = (height, width)
         # self.pixels = [[0]*self.width]*self.height
         self.pixels = np.zeros([height,width], int)
@@ -18,7 +19,7 @@ class Canvas():
 
     def render(self):
         for drawable in self.drawables:
-            drawable.draw()
+            drawable.draw(self)
         s = ""
         for row in range(0, self.height):
             for col in range(0, self.width):
